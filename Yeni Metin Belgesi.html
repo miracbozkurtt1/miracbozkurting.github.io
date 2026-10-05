@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Miraç Bozkurt | Kişisel Web Sitesi</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(135deg, #030914, #071426, #020711);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            border-bottom: 1px solid #28476f;
+            background: rgba(2, 8, 20, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo-m {
+            font-size: 40px;
+            font-weight: bold;
+            color: #168cff;
+            text-shadow: 0 0 20px #168cff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 35px;
+        }
+
+        .menu a {
+            color: #b8c7df;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #1699ff;
+            text-shadow: 0 0 12px #168cff;
+        }
+
+        /* ANA ALAN */
+        main {
+            text-align: center;
+            padding: 65px 20px 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* LOGO */
+        .wolf {
+            width: 145px;
+            height: 145px;
+            margin: auto;
+            border: 2px solid #087cff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            background: radial-gradient(circle, #10294a, #030914);
+            box-shadow:
+                0 0 20px #087cff,
+                inset 0 0 25px rgba(8,124,255,0.25);
+        }
+
+        /* İSİM */
+        h1 {
+            margin-top: 30px;
+            font-size: 68px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            color: #168fff;
+            text-shadow: 0 0 18px rgba(22,143,255,0.5);
+        }
+
+        /* AYIRICI */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 28px auto 40px;
+        }
+
+        .line {
+            height: 3px;
+            width: 220px;
+            background: linear-gradient(to right, transparent, #1595ff);
+            border-radius: 10px;
+            box-shadow: 0 0 8px #1595ff;
+        }
+
+        .line.right {
+            background: linear-gradient(to left, transparent, #1595ff);
+        }
+
+        .diamond {
+            width: 22px;
+            height: 22px;
+            background: #168fff;
+            transform: rotate(45deg);
+            box-shadow: 0 0 15px #168fff;
+        }
+
+        /* HAKKIMDA */
+        h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .about {
+            max-width: 950px;
+            margin: auto;
+            font-size: 25px;
+            line-height: 1.6;
+            color: #d9e2f1;
+        }
+
+        .about p {
+            margin-bottom: 28px;
+        }
+
+        /* GITHUB BUTONU */
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 17px 42px;
+            border: 2px solid #169bff;
+            border-radius: 35px;
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 21px;
+            font-weight: bold;
+            background: rgba(10, 30, 55, 0.7);
+            box-shadow:
+                0 0 15px rgba(22,155,255,0.5),
+                inset 0 0 15px rgba(22,155,255,0.08);
+            transition: 0.3s;
+        }
+
+        .github-button:hover {
+            transform: translateY(-4px);
+            background: #087cff;
+            box-shadow: 0 0 30px rgba(22,155,255,0.8);
+        }
+
+        .github-icon {
+            font-size: 28px;
+        }
+
+        .github-url {
+            margin-top: 18px;
+            color: #9caec8;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ALT KISIM */
+        footer {
+            margin: 70px auto 0;
+            padding: 35px 20px;
+            max-width: 1000px;
+            border-top: 1px solid #315477;
+            text-align: center;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            color: #45aaff;
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            color: #aab9ce;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #63758e;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* MOBİL */
+        @media (max-width: 768px) {
+
+            nav {
+                height: auto;
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .menu {
+                gap: 18px;
+            }
+
+            .menu a {
+                font-size: 14px;
+            }
+
+            main {
+                padding-top: 40px;
+            }
+
+            .wolf {
+                width: 115px;
+                height: 115px;
+                font-size: 55px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            h2 {
+                font-size: 35px;
+            }
+
+            .about {
+                font-size: 19px;
+            }
+
+            .line {
+                width: 90px;
+            }
+
+            .github-button {
+                font-size: 17px;
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÜ -->
+    <nav>
+        <div class="logo">
+            <div class="logo-m">M</div>
+            <div>Miraç Bozkurt</div>
+        </div>
+
+        <div class="menu">
+            <a href="#anasayfa">⌂ Ana Sayfa</a>
+            <a href="#hakkimda">♟ Hakkımda</a>
+            <a href="https://github.com/miracbozkurtt1" target="_blank">
+                ◉ GitHub
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- ANA SAYFA -->
+    <main id="anasayfa">
+
+        <div class="wolf">
+            🐺
+        </div>
+
+        <h1>
+            MİRAÇ <span>BOZKURT</span>
+        </h1>
+
+        <div class="divider">
+            <div class="line"></div>
+            <div class="diamond"></div>
+            <div class="line right"></div>
+        </div>
+
+
+        <!-- HAKKIMDA -->
+        <section id="hakkimda">
+
+            <h2>Hakkımda</h2>
+
+            <div class="about">
+
+                <p>
+                    Merhaba, ben Miraç Bozkurt.
+                    11. sınıf öğrencisiyim ve bilişim bölümünde
+                    okuyorum. 
+                </p>
+
+                <p>
+                    Kendi hakkımda söyleyebileceğim şeyler ise
+                    Meraklı Bir kişiliğim var.
+                    Tekstili sevmek zorundayım,
+                    Engel Sevgiye Engel değildir.
+                </p>
+
+            </div>
+
+
+            <!-- GITHUB -->
+            <a
+                class="github-button"
+                href="https://github.com/miracbozkurtt1"
+                target="_blank"
+            >
+                <span class="github-icon">◉</span>
+                GitHub Profilime Git
+                <span>↗</span>
+            </a>
+
+            <div class="github-url">
+                github.com/miracbozkurtt1
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-icons">
+                <span>&lt;/&gt;</span>
+                <span>|</span>
+                <span>💻</span>
+                <span>|</span>
+                <span>◉</span>
+            </div>
+
+            <div class="footer-text">
+                "Daha iyi bir gelecek için, kod yazmak..."
+            </div>
+
+            <div class="copyright">
+                © 2026 Miraç Bozkurt — Tüm hakları saklıdır.
+            </div>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>
